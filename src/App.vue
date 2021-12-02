@@ -12,6 +12,8 @@ import Start from '@/components/Start.vue'
 import Summary from '@/components/Summary.vue'
 import { fastfood } from '@/assets/fastfood'
 import { fortidsminder } from "@/assets/fortidsminder";
+import { bygninger } from "@/assets/bygninger";
+import { bygningFeature } from "@/bygningInterface";
 import { locationFeature } from '@/locationInterface'
 import { lineString } from "@/linestringInterface";
 import Question from '@/components/Question.vue'
@@ -55,6 +57,8 @@ export default defineComponent({
         locations.value = getRandomLocations(fastfood.features, numberOfQuestions)
       } else if (data.category == 'fortidsminder') {
         locations.value = getRandomLocations(fortidsminder.features, numberOfQuestions)
+      } else if (data.category == 'bygninger') {
+        locations.value = getRandomLocations(bygninger.features, numberOfQuestions)
       }
     }
 
@@ -117,7 +121,7 @@ export default defineComponent({
     } 
 
     
-    const getRandomLocations = (features: locationFeature[], n: number) => {
+    const getRandomLocations = (features: locationFeature[] | any, n: number) => {
       const result = new Array(n);
         let len = features.length;
         const taken = new Array(len);
