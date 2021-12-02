@@ -2,7 +2,7 @@
     <div class="flex space-x-4">
         <div v-if="highscoresFastfood.length > 0" id="highscore" class="mt-10 p-5 rounded-xl bg-gray-800 bg-opacity-50">
             <h1 class="text-center text-3xl text-red-400 font-bold mb-5">Top 10 - Fastfood!</h1>
-            <table>
+            <table class="m-auto">
                 <tr class=" text-center font-bold border-b border-yellow-100">
                     <th class="px-3">Placering</th>
                     <th class="px-3">Navn</th>
@@ -17,7 +17,7 @@
         </div>
         <div v-if="highscoresFortidsminder.length > 0" id="highscore" class="mt-10 p-5 rounded-xl bg-gray-800 bg-opacity-50">
             <h1 class="text-center text-3xl text-red-400 font-bold mb-5">Top 10 - Fortidsminder</h1>
-            <table>
+            <table class="m-auto">
                 <tr class=" text-center font-bold border-b border-yellow-100">
                     <th class="px-3">Placering</th>
                     <th class="px-3">Navn</th>
