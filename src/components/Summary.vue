@@ -8,7 +8,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
+import { computed, defineComponent, onMounted, PropType } from 'vue'
+import confetti from 'canvas-confetti'
 
 export default defineComponent({
     props: {
@@ -31,7 +32,14 @@ export default defineComponent({
         const playAgain = () => {
             emit('playAgain');
         }
-
+       
+       onMounted(() => {
+           confetti({
+               particleCount: 300,
+               spread: 125,
+           })
+       })
+       
         return {
             roundedDistance,
             playAgain
